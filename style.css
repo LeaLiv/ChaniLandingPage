@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+}
+
+.page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.page-content,
+.services-grid,
+.audience-grid,
+.testimonial-box,
+h2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-animate-scale {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-scale.animate-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.scroll-animate-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-animate-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Hero Section - Background Image 1 */
+.hero-section {
+    background-image: url('images/1.png');
+}
+
+.hero-section h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 40px;
+    color: #628e31;
+}
+
+.hero-section p {
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.hero-section .highlight {
+    font-weight: 700;
+    font-size: 2.2em;
+    color: #178633;
+    display: block;
+    margin: 30px 0;
+    text-shadow: 0 0 20px rgba(80, 227, 194, 0.3);
+}
+
+.hero-section .exclamation {
+    font-size: 2em;
+    font-weight: 700;
+    color: #F5A623;
+    margin: 30px 0;
+}
+
+/* About Section - Background Image 2 */
+.about-section {
+    background-image: url('images/2.png');
+}
+
+.about-section h2 {
+    font-size: 4em;
+    font-weight: 900;
+    margin-bottom: 40px;
+    color: #178633;
+}
+
+.about-section .name {
+    font-size: 3em;
+    font-weight: 700;
+    color: #628e31;
+    margin: 30px 0;
+}
+
+.about-section p {
+    font-size: 1.6em;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-section .tagline {
+    font-size: 2em;
+    font-weight: 700;
+    color: #F5A623;
+    margin: 40px 0;
+}
+
+/* Approach Section - Background Image 3 */
+.approach-section {
+    background-image: url('images/3.png');
+}
+
+.approach-section h2 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #628e31;
+}
+
+.approach-section p {
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.approach-section .emphasis {
+    font-weight: 700;
+    font-size: 2em;
+    color: #178633;
+    margin: 30px 0;
+}
+
+/* Services Section - Background Image 4 */
+.services-section {
+    padding: 80px 40px;
+    background-image: url('images/4.png');
+}
+
+.services-section h2 {
+    font-size: 3.5em;
+    font-weight: 900;
+    margin-bottom: 60px;
+    color: #178633;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-box {
+    padding: 40px;
+    background: rgba(74, 144, 226, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(80, 227, 194, 0.3);
+    transition: all 0.4s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    background: rgba(74, 144, 226, 0.25);
+    box-shadow: 0 15px 40px rgba(80, 227, 194, 0.3);
+}
+
+.service-box h3 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #178633;
+}
+
+.service-box p {
+    font-size: 1.3em;
+    line-height: 1.7;
+}
+
+/* Target Audience Section - Background Image 5 */
+.audience-section {
+    padding: 80px 40px;
+    background-image: url('images/5.png');
+}
+
+.audience-section h2 {
+    font-size: 3.5em;
+    font-weight: 900;
+    margin-bottom: 60px;
+    color: #178633;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audience-item {
+    padding: 30px;
+    background: rgba(74, 144, 226, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(80, 227, 194, 0.3);
+    transition: all 0.3s ease;
+    text-align: right;
+}
+
+.audience-item:hover {
+    background: rgba(74, 144, 226, 0.25);
+    transform: scale(1.05);
+}
+
+.audience-item h3 {
+    font-size: 1.6em;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #628e31;
+}
+
+.audience-item p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Testimonial Section - Background Image 6 */
+.testimonial-section {
+    padding: 80px 40px;
+    background-image: url('images/6.png');
+}
+
+.testimonial-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(74, 144, 226, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 2px solid rgba(80, 227, 194, 0.4);
+}
+
+.testimonial-box .quote {
+    font-size: 1.8em;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.testimonial-box .author {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #178633;
+}
+
+/* CTA Section - Background Image 7 */
+.cta-section {
+    background-image: url('images/7.png');
+}
+
+.cta-section h2 {
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #178633;
+}
+
+.cta-section .subtitle {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 60px;
+}
+
+.cta-section .main-cta {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 40px 0;
+    color: #F5A623;
+}
+
+.contact-box {
+    background: rgba(74, 144, 226, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 50px 80px;
+    border-radius: 20px;
+    border: 1px solid rgba(80, 227, 194, 0.4);
+    transition: all 0.3s ease;
+}
+
+.contact-box:hover {
+    background: rgba(74, 144, 226, 0.3);
+    transform: scale(1.05);
+}
+
+.contact-item {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 25px 0;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: scale(1.1);
+}
+
+.contact-item i {
+    margin-left: 15px;
+    color: #178633;
+}
+
+.contact-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #178633;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+    }
+
+    .hero-section .highlight {
+        font-size: 1.5em;
+    }
+
+    .about-section h2 {
+        font-size: 2.5em;
+    }
+
+    .about-section .name {
+        font-size: 2em;
+    }
+
+    .services-section h2,
+    .audience-section h2 {
+        font-size: 2em;
+    }
+
+    .contact-box {
+        padding: 30px 40px;
+    }
+
+    .contact-item {
+        font-size: 1.4em;
+    }
+
+    .services-grid,
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+}
